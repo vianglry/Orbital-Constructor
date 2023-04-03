@@ -15,6 +15,7 @@ variable "subnet_list" {
   type        = map(object({
     subnet_name             = string
     subnet_address_prefixes = list(string)
+    subnet_security_group   = string
   }))
   description = "The details of subnets to be created"
 }
@@ -24,14 +25,14 @@ variable "security_group_list" {
   description = "The list of security groups to be created."
 }
 
-variable "security_group_details" {
-  type = map(object({
-    security_group_name  = string
-    associated_subnets   = list(string)
-  }))
+# variable "security_group_details" {
+#   type = map(object({
+#     security_group_name  = string
+#     associated_subnets   = list(string)
+#   }))
 
-  description = "The list of security groups to be created."
-}
+#   description = "The list of security groups to be created."
+# }
 
 # variable "security_group_associations" {
 #   type = map(object({

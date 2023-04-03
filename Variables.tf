@@ -25,10 +25,11 @@ variable "public_ip_allocation" {
 
 variable "Orbital_Constructor_subnets" {
   type        = map(object({
-    subnet_name = string
+    subnet_name             = string
     subnet_address_prefixes = list(string)
+    subnet_security_group   = string
   }))
-  description = "The details to create the Oribital Constructor's subnets"
+  description = "The details to create the Oribital Constructor's subnets and security groups"
 }
 
 variable "Orbital_Constructor_Security_Groups" {

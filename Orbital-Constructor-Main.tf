@@ -8,12 +8,12 @@ locals {
 }
 
 
-resource "azurerm_resource_group" "orbital_constructor" {
+resource "azurerm_resource_group" "orbital_constructor_rg" {
   name     = local.resource_group_name
   location = local.location_name
 }
 
-resource "azurerm_virtual_network" "orbital_constructor_network" {
+resource "azurerm_virtual_network" "orbital_constructor_vnet" {
   name                = local.virtual_network_name
   resource_group_name = local.resource_group_name
   location            = local.location_name
